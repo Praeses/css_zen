@@ -1,0 +1,6 @@
+.bundle
+.gems
+tmp/
+tmp/**/*
+*.swp
+bin/*
