@@ -1,0 +1,95 @@
+@import 'support/vars.css.scss';
+
+html {
+  color:             $primary_light_color;
+  background-color:  $base_color;
+  width:             $skinny;
+  margin:            auto;
+  text-shadow:       1px 5px 1px $primary_dark_color;
+}
+
+p {
+  @include transition(all);
+  &:hover {
+    color: lighten($primary_dark_color,14);
+    text-shadow: 5px 1px 5px $primary_dark_color;
+  }
+}
+
+a {
+  color: $secondary_dark_color;
+  &:hover { color: $primary_dark_color; }
+}
+
+#pageHeader {
+  @include rotate(38deg);
+  @include transition(text-shadow, 2s);
+  @include transition(color, 2s);
+  position:  relative;
+  top:       25em;
+  left:      -25em;
+  color:     $primary_dark_color;
+
+  &:hover{
+    text-shadow:  2px 2px 4px $primary_dark_color;
+    color:        $secondary_light_color;
+  }
+}
+
+input {
+  position:relative;
+  @include border-radius(0.2em);
+  padding: 0.4em;
+
+  &:focus {
+    animation-name: myfirst;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    /* Firefox: */
+    -moz-animation-name: myfirst;
+    -moz-animation-duration: 5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: alternate;
+    -moz-animation-play-state: running;
+    /* Safari and Chrome: */
+    -webkit-animation-name: myfirst;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+  }
+}
+
+@keyframes myfirst
+{
+  0%   {background: red    ; left:0px   ; top:0px   ; padding: 0.4em ; }
+  25%  {background: yellow ; left:200px ; top:0px   ; padding: 1.4em ;}
+  50%  {background: blue   ; left:200px ; top:200px ; padding: 0.4em ;}
+  75%  {background: green  ; left:0px   ; top:200px ; padding: 1.4em ;}
+  100% {background: red    ; left:0px   ; top:0px   ; padding: 0.4em ;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+  0%   {background: red    ; left:0px   ; top:0px   ; padding: 0.4em ; }
+  25%  {background: yellow ; left:200px ; top:0px   ; padding: 1.4em ;}
+  50%  {background: blue   ; left:200px ; top:200px ; padding: 0.4em ;}
+  75%  {background: green  ; left:0px   ; top:200px ; padding: 1.4em ;}
+  100% {background: red    ; left:0px   ; top:0px   ; padding: 0.4em ;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+  0%   {background: red    ; -webkit-transform: rotate(90deg) ; padding: 0.4em ; }
+  10%   {background: red   ; -webkit-transform: rotate(0deg)  ; padding: 9.4em ; }
+  25%  {background: yellow ; -webkit-transform: rotate(90deg) ; padding: 1.4em ; }
+  50%  {background: blue   ; -webkit-transform: rotate(0deg)  ; padding: 0.4em ; }
+  75%  {background: green  ; -webkit-transform: rotate(90deg) ; padding: 1.4em ; }
+  90%   {background: red   ; -webkit-transform: rotate(0deg)  ; padding: 9.4em ; }
+  100% {background: red    ; -webkit-transform: rotate(90deg) ; padding: 0.4em ; }
+} 

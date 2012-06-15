@@ -4,3 +4,4 @@ source "https://rubygems.org"
 gem 'sprockets'
 gem 'sass'
 gem 'rack'
+gem 'coffee-script'

@@ -18,4 +18,9 @@ $skinny: 35em;
   -o-transform:        rotate($deg);
   transform:           rotate($deg);
 }
-
+@mixin border-radius($amount){
+  -webkit-border-radius:  $amount;
+  -moz-border-radius:     $amount;
+  -o-border-radius:       $amount;
+  border-radius:          $amount;
+}
