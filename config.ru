@@ -1,10 +1,13 @@
 require 'sprockets'
+require 'handlebars_assets'
 
 map '/assets' do
-  environment = Sprockets::Environment.new
-  environment.append_path 'assets/js'
-  environment.append_path 'assets/css'
-  run environment
+  env= Sprockets::Environment.new
+  puts HandlebarsAssets.path
+  env.append_path HandlebarsAssets.path
+  env.append_path 'assets/js'
+  env.append_path 'assets/css'
+  run env
 end
 
 map '/' do

@@ -1,0 +1,22 @@
+.quake {
+  width:     100%;
+  position:  absolute;
+  top:       0;
+  left:      0;
+  bottom:    100%;
+
+  .results {
+    background:  blue;
+    height:      100%;
+    opacity:     0.4;
+    filter:      alpha(opacity=40);
+  }
+
+  input.q {
+    display:    none;
+    border:     none;
+    width:      100%;
+    font-size:  2em;
+    padding:    .75em;
+  }
+}
